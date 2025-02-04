@@ -1,4 +1,4 @@
-import './scss/style.scss';
+import '../scss/style.scss';
 
 const DAY = 86400000;
 const HOUR = 3600000;
