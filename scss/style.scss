@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarpanch:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+    font-family: "Poppins", serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    align-items: center;
+    display: flex;
+    gap: 0.7em;
+    justify-content: center;
+    margin: 0;
+    padding: 0.7em 0 2em 0;
+
+    a {
+        filter: contrast(0);
+        transition: all 0.5s ease;
+
+        &:hover {
+            animation-direction: alternate;
+            animation-duration: 0.5s;
+            animation-iteration-count: 1;
+            animation-name: icon-anim;
+            filter: contrast(0.8);
+        }
+        & > img {
+            height: 2em;
+        }
+    }
+}
+
+main {
+    padding: 2em 0 0.7em 0;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .time {
+        color: #212529;
+        font-family: "Sarpanch", serif;
+        font-size: 4em;
+    }
+    .title {
+        color: #6c757d;
+    }
+    & > div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em 1.3em;
+    }
+}
+
+.container {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 1em;
+    margin: 0em auto;
+    min-width: 425px;
+    overflow: hidden;
+    padding: 1em;
+    width: 50%;
+}
+
+@media screen and (max-width: 480px) {
+    .clock {
+        .time {
+            font-size: 3em;
+        }
+    }
+    .container {
+        min-width: 405px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .clock {
+        flex-direction: column;
+
+        .time {
+            font-size: 4em;
+        }
+    }
+    .container {
+        min-width: 115px;
+        width: 70%;
+    }
+    .weeks {
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-image: linear-gradient(to right, rgba(0, 0, 0, 0), #dee2e6, rgba(0, 0, 0, 0)) 100% 1;
+    }
+}
+
+@keyframes icon-anim {
+    0% {
+        transform: rotate(0);
+    }
+    33% {
+        transform: rotate(-15deg);
+    }
+    66% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
